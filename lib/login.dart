@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth_practice2/forgot.dart';
+import 'package:firebase_auth_practice2/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -33,9 +36,18 @@ class _LogInState extends State<LogIn> {
               decoration: const InputDecoration(hintText: 'Enter password'),
             ),
 
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: (()=>signin()), 
-              child: const Text('Log In'))
+              child: const Text('Log In')),
+              const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: (()=>Get.to(const SignUp())), 
+              child: const Text('sign up')),
+              const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: (()=>Get.to(const Forgot())), 
+              child: const Text('Forgot password ?'))
           ],
         ),
       )
